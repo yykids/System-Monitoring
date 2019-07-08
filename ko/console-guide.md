@@ -1,4 +1,4 @@
-# Compute > System Monitoring > 콘솔 사용 가이드
+## Compute > System Monitoring > 콘솔 사용 가이드
 콘솔 사용 가이드에서는 System Monitoring을 사용하는데 필요한 기본적인 내용을 설명합니다.
 - 서버 대시보드
 - 사용자 그룹
