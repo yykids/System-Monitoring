@@ -1,39 +1,40 @@
-## Compute > System Monitoring > 개요
-**Compute > System Monitoring** 서비스에서는 **Instance**에서 사용자가 생성한 인스턴스에 대한 모니터링 기능을 제공합니다.
-인스턴스의 시스템 리소스 상태를 차트 형태로 시각화해서 볼 수 있으며, 사용량 임계치를 설정해 특정 상태의 알림을 이메일 또는 SMS로 받을 수 있습니다.
+## Compute > System Monitoring > Overview
+**Compute > System Monitoring** Service provides monitoring feature for the instances created by users in **Instance**.
+You can view the system resource status of the instance in a chart form. You can set a usage threshold to receive a notification upon reaching a specific state via email or SMS.
 
-System Monitoring은 각 인스턴스 서버에 설치된 System Monitoring Agent로 시스템 지표를 수집합니다. 
-기본적으로 Agent는 인스턴스의 이미지에 포함되어있기 때문에 인스턴스 구동시 자동으로 수집을 시작합니다.
-하지만 System Monitoring 서비스가 출시된 2019년 7월 23일 이전에 생성되어 동작 중인 인스턴스의 경우 별도의 Agent 설치가 필요합니다.
-Agent 설치 방법은 **Compute > System Monitoring > 콘솔 가이드 > Agent 설치 방법**을 참고하시기 바랍니다.
+System Monitoring collects system metrics to the System Monitoring Agent installed on each instance server. 
+Since the Agent is included in the image of the instance by default, it starts collecting them when the instance is started.
+However, for the instances which was created before July 23, 2019, which was the release date of System Monitoring service, an Agent should be installed separately.
+To install the Agent, see **Compute > System Monitoring > Console Guide > How to Install Agent**.
 
-## 제공 기능
-### 시스템 지표 대시보드 제공
-**Compute > Instance**에서 생성한 서버 인스턴스의 각종 시스템 지표를 차트로 제공해 각 서버의 상태를 파악할 수 있습니다. 시스템 지표 차트를 선택하여 원하는 레이아웃으로 배치할 수 있으며, 레이아웃을 여러 개 생성해 목적에 따라 관리할 수 있습니다.
+## Provided Features
+### System metric dashboard provided
+It provides various system metrics of the server instances created in **Compute > Instance** as charts so that you can view the status of each server. You can select a System metric chart and display it as a layout of your choice and create / manage several layouts to fit the purpose.
 
-시스템 지표는 1분 단위로 수집되며 최대 5년간 보관됩니다. 지표 데이터는 5분, 30분, 2시간, 1일 단위로 집계됩니다. 집계 단위별 보관 기간은 아래와 같습니다.
+The System metric is collected every minute and retained for up to 5 years. The metric data is aggregated every 5 min, 30 min, 2 hrs, or 1 day. The retention period per aggregation unit is as follows:
 
-집계 단위|보관 기간
+Aggregation Unit|Retention Period
 ---|---
-1분|7일
-5분|1개월
-30분|6개월
-2시간|2년
-1일|5년
+1 minute|7 days
+5 minutes|1 month
+30 minutes|6 months
+2 hours|2 years
+1 day|5 years
 
-### 지표 감시 설정 및 알림
-수집된 지표의 임계치를 설정해 서버를 항상 감시할 수 있으며 이상 징후를 파악할 수 있습니다.
-예를 들어, CPU 사용률이 90%를 넘는 경우, 특정 NIC의 사용량이 1000pps를 넘은 경우, 특정 프로세스가 중단된 경우 등 서버의 상태를 파악할 수 있는 다양한 감시 항목을 제공합니다.
+### Metric Monitoring Setting and Notification
+You can set thresholds for collected metrics, constantly monitor your server, and spot any abnormal symptoms of the server.
+It provides various monitoring items to figure out the server status (e.g. the CPU usage is higher than 90%, the usage of a specific NIC exceeds 1000 pps, a specific process has been stopped).
 
-### 통보 방법 선택: 이메일, SMS
-설정한 감시 조건을 충족하는 상황이 발생했을 때 어떤 방법으로 알림을 받을지 선택할 수 있습니다.
-이메일이나 SMS로 알림을 받을 수 있습니다.
+### Select Notification Type: Email, SMS
+You can select the type of method to receive a notification when a situation meets the monitoring conditions.
+You can receive a notification via email or SMS.
 
-## 용어 설명
-용어|설명
+## Terms Description
+Terms|Description
 ---|---
-시스템 지표 | System Monitoring에서 수집하는 각 인스턴스의 리소스입니다. CPU 사용률, 평균 로드(load average) 1m, 메모리 사용량 등이 있습니다.
-레이아웃 | 시스템 지표 차트의 묶음입니다. 사용자가 원하는 대로 차트를 배치할 수 있으며,  레이아웃을 여러 개 생성해 목적에 따라 관리할 수 있습니다.
-사용자 그룹 | 이벤트가 발생했을 때 알림을 받을 사용자 목록입니다.
-알림 그룹 | 임계치를 설정하고 어떤 인스턴스를 감시할지, 이벤트 발생 시 어떤 사용자 그룹에 알림을 보낼지를 지정합니다.
-감시 설정 | 각 지표 임계치의 상세 설정입니다.
+System Metric | A resource of each instance collected by System Monitoring. This includes CPU usage, load average 1 m, and memory usage.
+Layout | A bundle of System metric charts. User can place System metric charts as desired and   create and manage several layouts according to the purpose.
+User Group | A list of users who will receive notifications when an event occurs.
+Notify Group | Sets the threshold and specifies which instance will be monitored and to which user group a notification will be sent when an event occurs.
+Monitoring Setting | A detailed setting of each metric threshold.
+
