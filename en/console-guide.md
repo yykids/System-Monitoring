@@ -24,7 +24,7 @@ The color of the status indicator varies according to the current monitoring sta
 
 Hover mouse over the status indicator to view the status value of the instance and the agent.
 
-By default, the server instance deleted from **Compute > Instance** is not displayed in the server list of the server dashboard. However, the metric data is not deleted but retained. To view the metric of the deleted instance, select **Include Deleted Server**.
+By default, the server instance deleted from **Compute > Instance** is not displayed in the server list of the server dashboard. However, the metric data is not deleted but retained. To view the metric of the deleted instance, select **View Also Deleted Servers**.
 
 ### Default Layout
 The chart layout that first shows on **Compute > System Monitoring > Server Dashboard** is the **Default Layout**. This default layout can be used without any further settings. It shows **CPU Usage**, **Memory Usage**, and **Disk Usage**, **Network I/O Rate** charts.
@@ -160,7 +160,7 @@ Each monitored item has a unique value unit. Depending on the item, an additiona
 Duration of monitoring setting is an important element. Duration is used to specify the period for which the state is maintained after the monitoring target reaches a specific threshold. For example, when the threshold of CPU usage is 90% or higher and the duration is 5 minutes, a notification will be sent to users defined in the group when the CPU usage of the server linked with the corresponding Notify Group has been 90% or higher for over 5 minutes. Even if the CPU usage is 90% or higher, no notification will be sent if the usage goes below 90% within 5 minutes.
 
 ### Set the Monitoring Target and Notification Target
-Connect the monitoring target server to apply the monitoring setting defined above to the user group which will receive a notification when the monitoring conditions are met. Click the **Server - User Intergation** button on the right side of the **Setting** button.
+Connect the monitoring target server to apply the monitoring setting defined above to the user group which will receive a notification when the monitoring conditions are met. Click the **Server - User Integration** button on the right side of the **Setting** button.
 
 At the top, specify the server to apply the monitoring setting specified in the corresponding Notify Group. At the bottom, specify the user group which will receive a notification when the monitoring conditions are met. To deselect, click the **X** button on the right side of the server or user group name or select again from the dropdown menu to deselect.
 
