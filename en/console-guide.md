@@ -1,186 +1,187 @@
-## Compute > System Monitoring > 콘솔 사용 가이드
-콘솔 사용 가이드에서는 System Monitoring을 사용하는 데 필요한 기본적인 내용을 설명합니다.
-- 서버 대시보드
-- 사용자 그룹
-- 알림 그룹
+## Management > System Monitoring > Console User Guide
+The console user guide provides basics of how to use System Monitoring.
+- Server Dashboard
+- User Group
+- Notify Group
 
-## 서버 대시보드
-**Compute > System Monitoring > 서버 대시보드**에서는 모니터링 대상 인스턴스 목록과 기본 지표 차트를 확인할 수 있습니다.
-만약 모니터링할 수 있는 서버가 없을 때는 서버 목록이 비어 있습니다.
-이때는 **Compute > Instance**에서 사용 중인 인스턴스가 정상적으로 동작하고 있는지, 또는 모니터링 대상 인스턴스에 System Monitoring Agent가 설치돼 정상적으로 동작하고 있는지 확인해야 합니다. Agent 설치 방법은 **Agent 설치 방법** 절을 참고해 주시기 바랍니다.
+## Server dashboard
+**Compute > System Monitoring > Server Dashboard** allows you to view the list of instances to be monitored and the basic metric chart.
+If there is no server to monitor, the server list is empty.
+In this case, you must make sure that those instances being used under **Compute > Instance** are working properly or the System Monitoring Agent has been installed in the instances to be monitored and is working properly. For how to install the Agent, please see the section **How to Install Agent**.
 
-모니터링 대상 서버 인스턴스에 Agent가 정상적으로 설치돼 System Monitoring에서 지표 데이터가 수집되고 있다면 왼쪽의 서버 목록에 해당 인스턴스가 표시됩니다.  인스턴스를 선택하면 오른쪽 차트에서 수집된 지표 데이터를 확인할 수 있습니다.
+If the Agent has been installed successfully and metric data are collecting through System Monitoring, the corresponding instances are listed in the server list to the left.  Select an instance and view its metric data collected on the right chart.
 
-### 서버 목록
-서버 목록에서 원하는 서버를 선택해 각 서버의 지표를 확인할 수 있습니다.
-서버 목록에는 서버의 호스트명, IP 그리고 모니터링 상태를 나타내는 상태 표시등이 나타납니다.
-상태 표시등의 색깔은 현재 모니터링 상태에 따라 달라집니다.
+### Server List
+Select a desired server from the server list to view the metric of each server.
+The server list displays the host name and IP of the server and status indicator which shows the monitoring status.
+The color of the status indicator varies according to the current monitoring status.
 
-- 녹색: 정상
-- 노란색: 인스턴스 정보를 알 수 없으나, 모니터링은 진행되고 있는 상태
-- 붉은색: 가동 중인 인스턴스임에도 모니터링이 중단된 상태
-- 진한 회색: 작동이 중단된 인스턴스
-- 연한 회색: 삭제된 인스턴스
+- Green: Normal
+- Yellow: The instance information is unknown but monitoring is in progress
+- Red: Monitoring has been stopped even though the instance is operating
+- Dark gray: Instance which has been stopped
+- Light gray: Instance deleted
 
-인스턴스와 Agent의 상탯값은 상태 표시등에 마우스 포인터를 올리면 나타나는 툴팁에서 확인할 수 있습니다.
+Hover mouse over the status indicator to view the status value of the instance and the agent.
 
-**Compute > Instance**에서 삭제된 서버 인스턴스는 기본적으로 서버 대시보드의 서버 목록에는 나타나지 않습니다. 하지만 지표 데이터는 삭제하지 않고 보관합니다. 삭제된 인스턴스의 지표를 확인하려면 **삭제된 서버도 보기**를 선택합니다.
+By default, the server instance deleted from **Compute > Instance** is not displayed in the server list of the server dashboard. However, the metric data is not deleted but retained. To view the metric of the deleted instance, select **View Also Deleted Servers**.
 
-### 기본 레이아웃
-처음 **Compute > System Monitoring > 서버 대시보드**에 나타나는 차트 배열은 **기본 레이아웃**입니다. 별도 설정 없이 이용할 수 있는 기본 레이아웃입니다. **CPU Used**, **Memory Used(excepted cache/buffer)**, **Disk**, **Network(In/Out bps)** 차트를 보여줍니다.
-'기본 레이아웃'은 System Monitoring에서 기본적으로 제공하는 레이아웃이므로 사용자가 직접 차트를 구성할 수는 없습니다.
+### Default Layout
+The chart layout that first shows on **Compute > System Monitoring > Server Dashboard** is the **Default Layout**. This default layout can be used without any further settings. It shows **CPU Usage**, **Memory Usage**, and **Disk Usage**, **Network I/O Rate** charts.
+Since 'Default Layout' is a layout provided by System Monitoring by default, user cannot configure it by himself or herself.
 
-### 레이아웃 생성
-새로운 지표를 추가하거나, 차트를 원하는 대로 배치하려면 새로운 레이아웃이 필요합니다. 레이아웃을 만들려면 서버 대시보드 상단의 **레이아웃 만들기 버튼**을 클릭합니다. 레이아웃은 프로젝트당 최대 5개까지 만들 수 있습니다.
+### Create Layout
+To add a new metric or make your own chart placement, you need a new layout. To create a layout, click the **Create Layout** button at the top of the server dashboard. Up to five layouts can be created for each project.
 
-**레이아웃 만들기** 창에서 이름을 입력한 후 **생성** 버튼을 클릭하면 새로운 레이아웃이 생성됩니다. 등록된 차트가 없기 때문에 빈 화면이 나타납니다. 새로운 차트를 추가하려면 화면 안내에 따라 **차트 추가** 버튼을 클릭합니다.
 
-### 차트 생성
-**차트 추가** 버튼을 클릭하면 선택 가능한 지표의 목록이 나타납니다.
+Enter the name in the **Create Layout** window and then click the **Create** button to create a new layout. An empty screen appears since there is no registered chart. To add a new chart, click the **Add Chart** button by following the on-screen guide.
+### Create Chart
+Click the **Add Chart** button to display the list of selectable metrics.
 
-오른쪽에는 현재 System Monitoring에서 제공하는 지표 목록이 나타나며, 이 중 하나를 선택하면 왼쪽에 차트 미리 보기가 표시됩니다. **추가** 버튼을 클릭하면 선택한 차트가 레이아웃 하단에 추가됩니다.
+On the right side, the list of metrics provided by System Monitoring is displayed. Select one metric to display it chart preview on the left side. Click the **Add** button to add the selected chart at the bottom of the layout.
 
-직접 생성한 레이아웃은 사용자가 원하는 대로 차트의 위치와 크기를 조절할 수 있습니다. 사용자가 추가한 차트에는 아래와 같은 추가 기능이 제공됩니다.
+For user-created layouts, users can adjust the position and size of the charts as desired. The user-added charts provide the following additional functions:
 
-- 오른쪽 상단 아이콘 클릭: 레이아웃에서 차트를 삭제합니다.
-- 오른쪽 하단 아이콘 드래그: 차트의 크기를 조절할 수 있습니다.
-- 차트 제목 드래그: 차트의 위치를 변경할 수 있습니다.
+- Click the icon at the top right: Deletes the chart from the layout.
+- Drag the icon at the bottom right: Adjusts the chart size.
+- Drag the chart title: Changes the chart position.
 
-생성한 레이아웃은 상단의 레이아웃 드롭다운 메뉴에서 선택할 수 있습니다.
+You can select the created layout from the layout dropdown menu at the top.
 
-### 레이아웃 수정/삭제
-**레이아웃 관리** 버튼을 클릭하면 특정 레이아웃의 이름을 변경하거나 필요 없는 레이아웃을 삭제할 수 있습니다.
+### Modify/Delete Layout
+Click the **Manage** button to change the name of layouts or delete unnecessary layouts.
 
-### 날짜 선택
-수집된 지표 데이터는 최대 5년까지 보관됩니다. 오른쪽 상단의 **달력** 버튼을 클릭하여 조회할 범위를 설정합니다.
+### Select Date
+metric data collected is retained for up to five years. Click the **Calendar** button at the top right to set the lookup range.
 
-**날짜 검색** 창에서는 조회 기간으로 지정할 **시작 일시(From)**와 **끝 일시(To)**를 선택합니다. 시작 일시와 끝 일시를 선택하는 방식은 두 가지입니다.
-첫 번째는 직접 일시를 선택하는 방식입니다. 시작 일시, 끝 일시를 클릭하면 별도의 일시 선택 창이 나타납니다. 일시 선택 창에서 직접 일시를 지정할 수 있습니다.
+In the **Time Range** window, select the **start date (From)** and the **end date (To)** of the lookup range. You can select the start and end date in two ways.
+First, you can select the date directly. Click From and To to display the date selection window. In the date selection window, you can specify the date directly.
 
-두 번째 방법은 단축 버튼을 사용하는 방식입니다. 각 일시 버튼 아래에는 현재, 1시간, 1일 등의 별도 버튼이 있습니다. 원하는 버튼을 클릭해 기간 범위를 지정할 수 있습니다. 단축 버튼을 클릭하면 아래에 어떤 날짜 범위의 데이터를 가져올지 안내가 나타납니다.(예시: **7일 이전**부터 **현재**까지의 데이터를 검색합니다.)
+Second, you can use a hotkey. Below each date button, there are separately placed buttons: Now, 1 Hr, 1 Day, etc. Click the desired button to specify the period. If you click a hotkey, just below the hotkey, you will be asked from which period data should be taken.(e.g. Search data from **7 Days ago** to **Now**.)
 
-날짜 선택 창과는 별개로 또 다른 날짜 범위 선택 방법은 차트에서 직접 조회 기간을 선택하는 것입니다. 차트 내에서 보려는 시기를 가로로 드래그하면 영역이 선택되어 해당 영역 기간 내의 데이터를 확인할 수 있습니다. 차트 내에서 특이한 모습을 보인 구간을 선택해 집중적으로 살펴볼 수 있습니다.
+Aside from the date selection window, there is another way of selecting the date range. You can directly select a lookup period yourself on the chart. Drag a desired period horizontally within the chart to select a dragged area and you can view the data of the selected period. You can select and focus on the section that shows an abnormal shape in the chart.
 
-## 사용자 그룹
-**Compute > System Monitoring > 사용자 그룹**에서는 System Monitoring에서 모니터링하는 대상 중 특정 이벤트가 발생했을 때 알림을 받을 대상을 지정할 수 있습니다. 프로젝트를 멤버 중 알림을 받을 멤버를 선택할 수 있으며, 알림을 받을 사용자를 여러 그룹으로 묶어서 관리할 수 있습니다.
+## User Group
+**Compute > System Monitoring > User Group** allows you to specify which of his monitored users will receive notifications when a specific event occurs. You can select members among project members and group users to different groups for easy management.
 
-사용자 그룹이 없으면 처음 사용자 그룹을 조회할 때 빈 화면이 나타납니다. System Monitoring에서 알림을 받으려면 화면에서 안내하는 대로 사용자 그룹을 추가해야 합니다.
+If there is no user group, an empty screen will appear when you look up the user group for the first time. To receive notification from System Monitoring, add a user group as guided on the screen.
 
-### 사용자 그룹 생성
-사용자 그룹을 만들려면 **Compute > System Monitoring > 사용자 그룹**에서 **그룹 만들기 버튼**을 클릭합니다.
+### Create User Group
+To create a user group, go to **Compute > System Monitoring > User Group** and then click the **Create Group** button.
 
-**그룹 만들기** 창에서 이름을 입력한 후 **생성** 버튼을 클릭하면 사용자 그룹이 생성됩니다. 그리고 자동으로 다음 단계로 넘어가 프로젝트 멤버를 사용자 그룹에 추가할 수 있습니다.
+Enter the name in the **Create Group** window and then click the **Create** button to create a new user group. And you are automatically moved to the next step to add project members to the user group.
 
-**사용자 그룹 편집** 창 하단에는 현재 프로젝트에 속한 사용자 목록이 표시됩니다. 사용자 목록의 각 항목 오른쪽에 있는 **추가** 버튼을 클릭하여 해당 사용자 그룹에 추가할 수 있습니다. 추후 연동할 알림 그룹에서 사용자 그룹에 속한 사용자에게 알림을 보내도록 설정할 수 있습니다.
+The list of users who belong to the current project is displayed at the bottom of the **Edit User Group** window. Click the **Add** button next to each user name in the user list to add users to the user group. You can set to send a notification to the users in the user group from the Notify Group to be linked later.
 
-사용자 그룹을 만든 후 **Compute > System Monitoring > 사용자 그룹**에서 사용자 그룹 목록을 조회할 수 있습니다.
+After creating the user group, you can look up the user group list from **Compute > System Monitoring > User Group**.
 
-### 사용자 그룹 수정
-이미 생성된 사용자 그룹을 수정하려면 사용자 목록 그룹에서 **편집** 버튼을 클릭합니다. **편집** 버튼을 클릭하면 **사용자 그룹 편집** 창이 나타납니다. 생성 단계와 동일한 방법으로 사용자 그룹의 멤버를 수정할 수 있습니다.
+### Modify User Group
+To modify the created user group, click the **Edit** button from the user list group. Click the **Edit** button to display the **Edit User Group** window. In the same way you created a user group, you can modify the members of your user group.
 
-사용자 그룹 이름을 수정하려면 사용자 그룹 이름 오른쪽의 연필 아이콘을 클릭하면 됩니다.
+To modify the user group name, click the pencil icon on the right side of the user group name.
 
-## 알림 그룹
-알림 그룹은 **Compute > System Monitoring > 알림 그룹**에서 관리할 수 있습니다. 알림 그룹의 역할 두 가지는 다음과 같습니다.
-- 각 시스템 지표에 임계치를 설정할 수 있습니다. System Monitoring에서는 시스템 지표에 임계치를 설정한 것을 **감시 설정**이라고 합니다. 선택한 시스템 지표가 임계치에 도달하면 지정한 사용자 그룹에 알림이 통보됩니다.
-- 생성한 감시 설정을 모니터링 대상 서버와 연동하고 통보 대상이 될 사용자 그룹을 연동할 수 있습니다. 실질적으로 알림 그룹은 서버 대시보드와 사용자 그룹을 연결하는 역할이라 할 수 있습니다.
+## Notify Group
+You can manage the Notify Group at **Compute > System Monitoring > Notify Group**. Tow roles of the Notify Group are as follows:
+- Sets the threshold to each system metric. In System Monitoring, **monitoring setting** refers to setting threshold to the system metric. When the selected system metric reaches the threshold, a notification is sent to the specified user group.
+- You can link the created monitoring setting with the monitoring target server and then link with the user group to receive the notification. Actually, the Notify Group plays a role in connecting the server dashboard and user group.
 
-알림 그룹이 없으면 처음 알림 그룹을 조회할 때 빈 화면이 나타납니다. 시스템 지표에 임계치를 설정하고 원하는 사용자 그룹으로 알림을 보내려면 화면에서 안내하는 대로 알림 그룹을 추가해야 합니다.
+If there is no Notify Group, an empty screen appears when you look up the Notify Group for the first time. To set a threshold to the system metric and send a notification to the desired user group, add a Notify Group following the on-screen guidance.
 
-### 알림 그룹 생성
-**그룹 만들기** 버튼을 클릭해 신규 알림 그룹을 생성할 수 있습니다.
+### Create Notify Group
+Click the **Create Group** button to create a new Notify Group.
 
-**그룹 만들기** 창에서 그룹 이름을 입력하고 **생성** 버튼을 클릭하면 알림 그룹이 추가됩니다.
+Enter the group name in the **Create Group** window and then click the **Create** button to add a Notify Group.
 
-### 감시 설정 등록/수정/삭제
-감시 설정을 등록하려면 알림 그룹 항목의 버튼 중 왼쪽의 **감시 설정 추가** 버튼을 클릭합니다. 감시 설정이 등록되지 않았다면 아무 내용도 표시되지 않습니다. 신규 감시 설정을 추가하려면 **감시 설정 추가** 버튼을 클릭합니다. 새로운 감시 설정 입력란이 추가되며, 감시 설정이 저장되지는 않습니다. 원하는 시스템 지표에 임계치를 지정하고 **저장** 버튼을 클릭하면 최종적으로 감시 설정이 저장됩니다. **취소** 버튼을 클릭하면 입력란은 제거됩니다.
+### Register/Modify/Delete Monitoring Setting
+To register monitoring setting, click the **Setting** button on the left side of the Notify Group buttons. If no monitoring setting has been registered, nothing will be displayed. To add a new monitoring setting, click the **Add Monitoring Setting** button. A new input field for monitoring setting will be added but it doesn't save any monitoring setting for now. Specify a threshold to the desired system metric and then click the **Save** button to save the monitoring setting. Click the **Cancel** button to remove the input field.
 
-저장된 감시 설정은 오른쪽의 연필 아이콘을 클릭해 다시 수정할 수 있으며, 휴지통 아이콘을 클릭하면 삭제할 수 있습니다.
+The saved monitoring setting can be modified by clicking the pencil icon on the right side. It can also be deleted by clicking the trash bin icon.
 
-현재 감시 설정 가능한 시스템 지표의 항목은 다음과 같습니다.
+The following is the list of system metrics to which monitoring can be set.
 
-| 항목 | 단위 | 비교 방식 | 추가 요굿값 |
+| Item | Unit | Comparison type | Additionally requested value |
 | --- | --- | --- | --- |
-| 리부트 | 리부트 | - | - |
-| CPU: Used | % | 이상/이하 | - |
-| CPU: Idle | % | 이상/이하 | - |
-| CPU: User | % | 이상/이하 | - |
-| CPU: System | % | 이상/이하 | - |
-| CPU: nice | % | 이상/이하 | - |
-| CPU: irq | % | 이상/이하 | - |
-| CPU: softirq | % | 이상/이하 | - |
-| CPU: io wait | % | 이상/이하 | - |
-| Load Average: 1 Min | - | 이상/이하 | - |
-| Load Average: 5 Min | - | 이상/이하 | - |
-| Load Average: 15 Min | - | 이상/이하 | - |
-| Memory: Used | % | 이상/이하 | - |
-| Memory: Used | MB | 이상/이하 | - |
-| Memory: Free | MB | 이상/이하 | - |
-| Memory: Buffers | MB | 이상/이하 | - |
-| Memory: Cached | MB | 이상/이하 | - |
-| Memory: pgpgin | KB/s | 이상/이하 | - |
-| Memory: pgpgout | KB/s | 이상/이하 | - |
-| Swap: Used | % | 이상/이하 | - |
-| Swap: Total | MB | 이상/이하 | - |
-| Swap: Used | MB | 이상/이하 | - |
-| Disk: Read | Counts | 이상/이하 | - |
-| Disk: Write | Counts | 이상/이하 | - |
-| Disk: Read | Bytes | 이상/이하 | - |
-| Disk: Write | Bytes | 이상/이하 | - |
-| File System: Used | MB | 이상/이하 | `파티션명` |
-| File System: Avail | MB | 이상/이하 | `파티션명` |
-| File System: Used | % | 이상/이하 | `파티션명` |
-| File System: i-node Used | % | 이상/이하 | `파티션명` |
-| File System: Mount | - | 포함/불포함 | - | `파티션명` |
-| Network: Recv | Bytes/s | 이상/이하 | `인터페이스명` |
-| Network: Send | Bytes/s | 이상/이하 | `인터페이스명` |
-| Network: Recv Packets | pps| 이상/이하 | `인터페이스명` |
-| Network: Send Packets | pps | 이상/이하 | `인터페이스명` |
-| Network: Recv Error | Counts | 이상/이하 | `인터페이스명` |
-| Network: Send Error | Counts | 이상/이하 | `인터페이스명` |
-| Network: Collision | Counts | 이상/이하 | `인터페이스명` |
-| User: User Count | - | 이상/이하 | `인터페이스명` |
-| Process: Total Count | - | 이상/이하 | - |
-| Process: Down | - | - | - | `프로세스명` |
-| Process: Count | - | 이상/이하 | `프로세스명` |
-| Process: CPU | % | 이상/이하 | `프로세스명` |
-| Process: Memory | % | 이상/이하 | `프로세스명` |
-| Process: Memory | KB | 이상/이하 | `프로세스명` |
-| Process: Thread Count| - | 이상/이하 | `프로세스명` |
-| Process: Restart | - | - | `프로세스명` |
-| File: Content | TEXT | 포함/불포함 | `File Path` |
-| File: Size | KB | 이상/이하 | `File Path` |
+| Server: Reboot | Reboot | - | - |
+| CPU: Used | % | Higher/Lower | - |
+| CPU: Idle | % | Higher/Lower | - |
+| CPU: User | % | Higher/Lower | - |
+| CPU: System | % | Higher/Lower | - |
+| CPU: nice | % | Higher/Lower | - |
+| CPU: irq | % | Higher/Lower | - |
+| CPU: softirq | % | Higher/Lower | - |
+| CPU: iowait | % | Higher/Lower | - |
+| Load Average: 1 Min | - | Higher/Lower | - |
+| Load Average: 5 Min | - | Higher/Lower | - |
+| Load Average: 15 Min | - | Higher/Lower | - |
+| Memory: Used | % | Higher/Lower | - |
+| Memory: Used | MB | Higher/Lower | - |
+| Memory: Free | MB | Higher/Lower | - |
+| Memory: Buffers | MB | Higher/Lower | - |
+| Memory: Cached | MB | Higher/Lower | - |
+| Memory: pgpgin | KB/s | Higher/Lower | - |
+| Memory: pgpgout | KB/s | Higher/Lower | - |
+| Swap: Used | % | Higher/Lower | - |
+| Swap: Total | MB | Higher/Lower | - |
+| Swap: Used | MB | Higher/Lower | - |
+| Disk: Read | Counts | Higher/Lower | - |
+| Disk: Write | Counts | Higher/Lower | - |
+| Disk: Read | Bytes | Higher/Lower | - |
+| Disk: Write | Bytes | Higher/Lower | - |
+| File System: Used | MB | Higher/Lower | `Partition name` |
+| File System: Avail | MB | Higher/Lower | `Partition name` |
+| File System: Used | % | Higher/Lower | `Partition name` |
+| File System: i-node Used | % | Higher/Lower | `Partition name` |
+| File System: Mount | - | Included/Not included | - | `Partition name` |
+| NIC: Recv | Bytes/s | Higher/Lower | `Interface name` |
+| NIC: Send | Bytes/s | Higher/Lower | `Interface name` |
+| NIC: Recv Packets | pps| Higher/Lower | `Interface name` |
+| NIC: Send Packets | pps | Higher/Lower | `Interface name` |
+| NIC: Recv Error | Counts | Higher/Lower | `Interface name` |
+| NIC: Send Error | Counts | Higher/Lower | `Interface name` |
+| NIC: Collision | Counts | Higher/Lower | `Interface name` |
+| User: User Count | - | Higher/Lower | `Interface name` |
+| Process: Total Count | - | Higher/Lower | - |
+| Process: Down | - | - | - | `Process name` |
+| Process: Count | - | Higher/Lower | `Process name` |
+| Process: CPU | % | Higher/Lower | `Process name` |
+| Process: Memory | % | Higher/Lower | `Process name` |
+| Process: Memory | KB | Higher/Lower | `Process name` |
+| Process: Thread Count| - | Higher/Lower | `Process name` |
+| Process: Restart | - | - | `Process name` |
+| File: Content | TEXT | Included/Not included | `File Path` |
+| File: Size | KB | Higher/Lower | `File Path` |
 | File: Modification | - | - | `File Path` |
 | File: Non-Modification | - | - | `File Path` |
 | File: Non-Exist| - | - | `File Path` |
 
-각 감시 항목은 고유한 값 단위를 가지고 있고 항목에 따라서 임계치 외에 추가로 값을 요구할 수도 있습니다.
+Each monitored item has a unique value unit. Depending on the item, an additional value may be required except the threshold.
 
-#### 감시 설정 지속 시간
-감시 설정의 지속 시간은 중요한 요소입니다. 지속 시간은 감시 대상이 지정한 임계치에 도달한 후 그 상태가 지속되는 시간을 조건으로 지정할 때 사용합니다. 예를 들어, CPU 사용률의 임계치가 90% 이상이고 지속 시간이 5분이라면, 해당 알림 그룹과 연동된 서버의 CPU 사용률이 90% 이상인 상태가 5분 이상 지속되었을 때 사용자 그룹에 정의된 사용자들에게 알림을 보냅니다. 만약 CPU 사용률이 90% 이상이 되어도, 5분 이내에 90% 미만으로 떨어지면 알림이 발생하지 않습니다.
+#### Monitoring Setting Duration
+Duration of monitoring setting is an important element. Duration is used to specify the period for which the state is maintained after the monitoring target reaches a specific threshold. For example, when the threshold of CPU usage is 90% or higher and the duration is 5 minutes, a notification will be sent to users defined in the group when the CPU usage of the server linked with the corresponding Notify Group has been 90% or higher for over 5 minutes. Even if the CPU usage is 90% or higher, no notification will be sent if the usage goes below 90% within 5 minutes.
 
-### 감시 대상 및 통보 대상 설정
-앞에서 정의한 감시 설정을 적용할 모니터링 대상 서버와 감시 조건이 충족되면 알림을 받을 사용자 그룹을 연결할 수 있습니다. **감시 설정** 버튼 오른쪽의 **서버 및 사용자 그룹 연동** 버튼을 클릭합니다.
+### Set the Monitoring Target and Notification Target
+Connect the monitoring target server to apply the monitoring setting defined above to the user group which will receive a notification when the monitoring conditions are met. Click the **Server - User Integration** button on the right side of the **Setting** button.
 
-상단에서는 해당 알림 그룹에 정의된 감시 설정을 반영할 서버를 지정합니다. 하단에서는 감시 조건 충족 시 알림을 받을 사용자 그룹을 지정합니다. 선택을 해제하려면 서버 또는 사용자 그룹 이름 오른쪽의 **X** 버튼을 클릭하거나 드롭다운 메뉴에서 재선택해 선택을 해제할 수 있습니다.
+At the top, specify the server to apply the monitoring setting specified in the corresponding Notify Group. At the bottom, specify the user group which will receive a notification when the monitoring conditions are met. To deselect, click the **X** button on the right side of the server or user group name or select again from the dropdown menu to deselect.
 
-이후 **Compute > System Monitoring > 알림 그룹**에서 설정한 알림 그룹 목록을 조회할 수 있습니다.
+Now you can look up the Notify Group list from **Compute > System Monitoring > Notify Group**.
 
-## Agent 설치 방법
+## How to Install Agent
 ### Linux
-- **root 권한 필요**
-- 아래의 설치 명령을 실행합니다.
+- **Root permissions required**
+- Execute the install command below.
 
 ```bash
 curl -s http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-installer.sh | sh
 ```
 
-- 실행되는 프로세스: **toast-sysmon**(2개)
+- Executed processes: **toast-sysmon**(2)
 
 ### Windows
-- **Administrator 권한 필요**
-- 아래 경로에서 설치 파일을 다운로드하고 실행합니다.
+- **Administrator permissions required**
+- Download and execute the install file from the following path.
 ```
 http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon.exe
 ```
-- 실행되는 프로세스: **toastmon.exe**
+- Executed processes: **toastmon.exe**
+
