@@ -169,21 +169,29 @@
 
 이후 **Compute > System Monitoring > 알림 그룹**에서 설정한 알림 그룹 목록을 조회할 수 있습니다.
 
+
 ## Agent 설치 방법
+
+Linux와 Windows에 Agent를 설치하는 방법은 다음과 같습니다.
+
 ### Linux
-- **root 권한 필요**
-- 아래의 설치 명령을 실행합니다.
 
-```bash
-curl -s http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-installer.sh | sh
-```
+1. root 권한이 있어야 합니다.
+2. 아래 경로에서 인스턴스 내 설치 스크립트가 있는지 확인합니다. 
+    * 경로: `/opt/toast-sysmon-install.sh`
 
-- 실행되는 프로세스: **toast-sysmon**(2개)
+3. 확인 결과 파일이 없다면 아래 링크에서 다운로드합니다.
+    * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.sh
+
+4. 서버에서 설치 스크립트를 실행합니다. 설치가 완료되면 자동으로 모니터링이 시작됩니다.
+
 
 ### Windows
-- **Administrator 권한 필요**
-- 아래 경로에서 설치 파일을 다운로드하고 실행합니다.
-```
-http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon.exe
-```
-- 실행되는 프로세스: **toastmon.exe**
+1. 관리자(Administrator) 권한이 있어야 합니다.
+2. 아래 경로에서 인스턴스 내 설치 스크립트가 있는지 확인합니다.
+    * 겅로: `C:\Program Files(x86)\NHN\toast-sysmon-install.ps1`
+
+3. 확인 결과 파일이 없다면 아래 링크에서 다운로드합니다.
+    * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
+
+4. 서버에서 설치 스크립트를 실행합니다. 설치가 완료되면 자동으로 모니터링이 시작됩니다.
