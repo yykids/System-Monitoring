@@ -167,21 +167,33 @@
 
 その後、**Compute > System Monitoring > 通知グループ**で設定した通知グループリストを照会できます。
 
-## Agentインストール方法
+
+## Agentのインストール方法
+
 ### Linux
-- **root権限が必要**
-- 下記のインストールコマンドを実行します。
+1. root権限必要
+2. インスタンス内インストールスクリプトの存在を確認
+    * 下記のパスにスクリプトファイルがあるかどうかを確認してください。
+`/opt/toast-sysmon-install.sh`
 
-```bash
-curl -s http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-installer.sh | sh
-```
+3. インストールスクリプトのダウンロード
+    * 2番で確認したファイルがない場合は、下記のリンクからダウンロードしてください。
+https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.sh
 
-- 実行されるプロセス：**toast-sysmon**(2個)
+4. サーバーでインストールスクリプトを実行
+    * サーバーでインストールスクリプトを実行します。インストールが完了したら、自動的にモニタリングが始まります。
+
 
 ### Windows
-- **Administrator権限が必要**
-- 下記のパスからインストールファイルをダウンロードして実行します。
-```
-http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon.exe
-```
-- 実行されるプロセス：**toastmon.exe**
+1. Administrator権限必要
+2. インスタンス内インストールスクリプトの存在を確認
+    * 下記パスにスクリプトファイルがあるかどうかを確認してください。
+`C:\Program Files(x86)\NHN\toast-sysmon-install.ps1`
+
+3. インストールスクリプトのダウンロード
+    * 2番で確認したファイルがない場合は、下記のリンクからダウンロードしてください。
+https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
+
+4. サーバーでインストールスクリプトを実行
+    * サーバーでインストールスクリプトを実行します。インストールが完了したら、自動的にモニタリングが始まります。
+
