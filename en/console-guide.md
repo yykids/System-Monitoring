@@ -166,22 +166,31 @@ At the top, specify the server to apply the monitoring setting specified in the 
 
 Now you can look up the Notify Group list from **Compute > System Monitoring > Notify Group**.
 
-## How to Install Agent
+
+## How to Install Agents
+
 ### Linux
-- **Root permissions required**
-- Execute the install command below.
+1. Requires Root Authority 
+2. Check if Installation Script Exists within Instance 
+    * See if there is a script file in the path like below: `/opt/toast-sysmon-install.sh`
 
-```bash
-curl -s http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-installer.sh | sh
-```
+3. Download Installation Script 
+    * If there is no file from no.2, download one from the following link:
+https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.sh
 
-- Executed processes: **toast-sysmon**(2)
+4. Execute Installation Script on Server 
+    * With installation script executed and installed on the server, monitoring shall begin automatically. 
+
 
 ### Windows
-- **Administrator permissions required**
-- Download and execute the install file from the following path.
-```
-http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon.exe
-```
-- Executed processes: **toastmon.exe**
+1. Requires Administrator Authority
+2. Check if Installation Script Exists within Instance 
+    * See if there is a script file in the path like below: `C:\Program Files(x86)\NHN\toast-sysmon-install.ps1`
+
+3. Download Installation Script
+    * If there is no file from no.2, download one from the following link:
+https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
+
+4. Execute Installation Script in Server
+    * With installation script executed and installed on the server, monitoring shall begin automatically. 
 
