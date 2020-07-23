@@ -166,21 +166,32 @@
 
 然后可在**Compute > System Monitoring > 警报组**中查询设置的警报组列表。
 
+
 ## Agent安装方法
-#### Linux
-- **需要root权限**
-- 执行如下安装命令。
 
-```bash
-curl -s http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-installer.sh | sh
-```
+### Linux
+1. 需要root权限
+2. 确认实例内有无安装脚本
+    * 请确认以下路径里有无脚本文件。 
+    * `/opt/toast-sysmon-install.sh`
 
-- 执行的流程：**Toast-sysmon**（2个）
+3. 下载安装脚本
+    * 如果没有第2项中确认的文件，请在以下链接中下载。
+    * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.sh
 
-#### Windows
-- **需要Administrator权限**
-- 在如下路径下载并运行安装文件。
-```
-http://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon.exe
-```
-- 执行的流程：**toastmon.exe**
+4. 在服务器中运行安装脚本
+    * 在服务器中运行安装脚本后，当安装完成时自动开始监控。
+
+
+### Windows
+1. 需要Administrator权限
+2. 确认实例内有无安装脚本
+    * 请确认以下路径里有无脚本文件。
+    * `C:\Program Files(x86)\NHN\toast-sysmon-install.ps1`
+
+3. 下载安装脚本
+    * 如果没有第2项中确认的文件，请在以下链接中下载。
+    * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
+
+4. 在服务器中运行安装脚本
+    * 在服务器中运行安装脚本后，当安装完成时自动开始监控。
