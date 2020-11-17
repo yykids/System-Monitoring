@@ -1,5 +1,5 @@
-## Compute > System Monitoring > OpenMetrics 대시보드 > 콘솔 사용 가이드
-콘솔 사용 가이드에서는 OpenMetrics 대시보드를 사용하는 데 필요한 내용을 설명합니다.
+## Compute > System Monitoring > OpenMetrics Monitoring > 콘솔 사용 가이드
+콘솔 사용 가이드에서는 OpenMetrics Monitoring을 사용하는 데 필요한 내용을 설명합니다.
 **Compute > System Monitoring > OpenMetrics 대시보드**에서는 모니터링 작업 공간을 정의하고 수집 대상을 지정하여 Exporter 또는 그 형식을 따르는 임의의 지표를 수집할 수 있습니다.
 수집된 지표는 서버 대시보드와 유사한 방식으로 레이아웃과 차트를 구성하여 확인할 수 있습니다.
 
