@@ -16,10 +16,9 @@
 * [OpenMetrics](https://github.com/OpenObservability/OpenMetrics/blob/master/OpenMetrics.md)는 Prometheus 설명 형식과 이를 기반으로 한 통합 시스템들에서 사용하기 위해 추진되고 있는 표준화 작업입니다.
 * System Monitoring에서도 OpenMetrics 기반의 모니터링 도구를 제공합니다.
 * 일반적으로 Prometheus를 구축하여 모니터링을 하려면 추가적인 자원 소모와 네트워크 구성 관리가 필요합니다.
-    * ![Prometheus](open-metrics-overview-1.png)
+    * ![Prometheus](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-1.png)
 * System Monitoring에서는 각 인스턴스 내에서 지표를 추출할 경로만 준비되면, Agent가 대신 지표를 수집하고 사용자는 별도의 서비스 구축 없이 모니터링 도구를 사용할 수 있습니다.
-    * ![System Monitoring OpenMetrics](open-metrics-overview-2.png)
-
+    * ![System Monitoring OpenMetrics](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
 
 ## 제공 기능
 ### OpenMetrics 기반의 커스텀 지표 수집 및 대시보드 제공
@@ -37,3 +36,4 @@ OpenMetrics로 수집된 지표는 1분 단위로 수집되며 최대 5년간 �
 30분|6개월
 2시간|2년
 1일|5년
+> 최대 보관 기간은 추후 사정에 따라 변경될 수 있으며 이 경우 별도로 회원에게 고지합니다.
